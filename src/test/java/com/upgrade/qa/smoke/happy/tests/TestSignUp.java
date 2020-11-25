@@ -161,6 +161,13 @@ public class TestSignUp extends BaseTest {
 			JSONArray array  = (JSONArray) result.get("loanApplications");
 			String type = ((JSONObject) array.get(0)).get("productType").toString();
 			Assert.assertEquals(type, "PERSONAL_LOAN");
+			
+			// Try with wrong user
+			jo.remove("username");
+			jo.put("username", "wrong_user_name");
+			response = client.postRequest("/login", headers, jo.toJSONString());
+			code = response.getStatusLine();
+			Assert.assertEquals(code.getStatusCode(), 401);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());
