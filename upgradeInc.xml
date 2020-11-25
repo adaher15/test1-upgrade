@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name = "CodingChallenge">
+
+   <!-- <test name = "challenge_1">
+      <classes>
+         <class name = "com.upgrade.qa.smoke.happy.tests.TestSignUp" />
+      </classes>
+   </test> -->
+  
+   <test name = "challenge_2">
+      <packages>
+         <package name = "com.upgrade.qa.base" />
+         <package name = "com.upgrade.qa.smoke.happy.tests" />
+      </packages>
+   </test>
+</suite>  
